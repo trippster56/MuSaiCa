@@ -1,0 +1,7 @@
+[submodule "mainsail"]
+	path = mainsail
+	url = https://github.com/mainsail-crew/mainsail.git
+	branch = master
+[submodule "slicer"]
+	path = slicer
+	url = https://github.com/trippster56/OrcaSlicer-FullSpectrum.git

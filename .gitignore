@@ -1,0 +1,16 @@
+# Build artifacts
+slicer/build*/
+slicer/deps/build/
+slicer/deps/build_*/
+mainsail/node_modules/
+mainsail/dist/
+
+# macOS junk
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Local logs
+*.log
