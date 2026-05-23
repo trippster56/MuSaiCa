@@ -7,6 +7,7 @@ A single desktop app for the **Snapmaker U1** that combines:
 - **Slicer** — forked from [OrcaSlicer-FullSpectrum](https://github.com/ratdoux/OrcaSlicer-FullSpectrum) (itself a Snapmaker Orca fork of OrcaSlicer).
 - **Printer monitor** — Mainsail bundled inside the slicer binary, loaded in a webview tab. Talks to the U1's Moonraker over the network. No second app to launch.
 - **End-of-print stepper-music jingles** — Mario 1-Up by default, configurable via a dropdown in printer settings.
+- **Filament inventory** — handled by [Spoolman](https://github.com/Donkie/Spoolman), which the bundled Mainsail tab speaks natively. Setup in [docs/SPOOLMAN.md](docs/SPOOLMAN.md). Zero MuSaiCa-side code; pure ecosystem leverage.
 
 > The previous, broader scope (LLC dashboard tab, Printables Discover tab, custom-built Moonraker UI) is preserved in `README_GRAND_VISION.md` as a stretch. This README is the realistic v1 plan.
 
