@@ -13,8 +13,14 @@ if [[ ! -d "${MAINSAIL_DIR}" ]]; then
     exit 1
 fi
 
-echo "==> Building Mainsail (npm run build)"
-( cd "${MAINSAIL_DIR}" && npm install --no-audit --no-fund && npm run build )
+echo "==> Building Mainsail (vite build --base=./)"
+# Mainsail's default build emits absolute /assets/ paths; under file:// those
+# resolve to filesystem root and 404. Build with a relative base instead.
+( cd "${MAINSAIL_DIR}" \
+    && npm install --no-audit --no-fund \
+    && rm -rf dist \
+    && npx vite build --base=./ \
+    && (cd dist && zip -qr mainsail.zip ./ -x '**.DS_Store' ./) )
 
 if [[ ! -d "${MAINSAIL_DIR}/dist" ]]; then
     echo "error: build produced no dist/" >&2
